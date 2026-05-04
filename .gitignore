@@ -15,8 +15,6 @@ logs/
 
 # Fichiers personnels
 *.pdf
-*.xlsx
-*.csv
 
 # OS
 .DS_Store
