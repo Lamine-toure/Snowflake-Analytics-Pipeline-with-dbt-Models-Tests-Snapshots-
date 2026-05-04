@@ -1,0 +1,23 @@
+# Environnement Python
+venv/
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# dbt
+target/
+dbt_packages/
+
+# Logs
+logs/
+
+# Fichiers personnels
+*.pdf
+*.xlsx
+*.csv
+
+# OS
+.DS_Store
+Thumbs.db

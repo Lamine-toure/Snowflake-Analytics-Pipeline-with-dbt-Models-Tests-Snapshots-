@@ -1,0 +1,5 @@
+version: 2
+
+tests:
+  - name: no_negative_amounts
+    description: "Test custom : vérifie qu'aucun montant n'est négatif dans int_orders_enriched."

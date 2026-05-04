@@ -1,0 +1,20 @@
+version: 2
+
+snapshots:
+  - name: customers_snapshot
+    description: "Snapshot SCD Type 2 pour suivre l'évolution des clients."
+    columns:
+      - name: customer_id
+        description: "Identifiant unique du client."
+        tests:
+          - not_null
+      - name: name
+        description: "Nom du client."
+      - name: country
+        description: "Pays du client."
+      - name: dbt_valid_from
+        description: "Début de validité de la version."
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        description: "Fin de validité de la version."

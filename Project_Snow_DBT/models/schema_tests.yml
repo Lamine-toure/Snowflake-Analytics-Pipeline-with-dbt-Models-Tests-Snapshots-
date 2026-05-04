@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  # STAGING MODELS
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+
+  - name: stg_products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  # INTERMEDIATE MODELS
+  - name: int_orders_enriched
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+
+  - name: int_events_agg
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+      - name: nb_events
+        tests:
+          - not_null
+
+  # MARTS
+  - name: mart_top_products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: mart_revenue_by_country
+    columns:
+      - name: country
+        tests:
+          - not_null
+      - name: revenue_eur
+        tests:
+          - not_null
+
+
